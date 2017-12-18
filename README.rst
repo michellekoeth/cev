@@ -19,7 +19,7 @@ The amazing `spaCy library`_ is used for natural language (NL) processing.
 Finally, if you want to serve up this web app using an http proxy like nginx, you'll need to install Gunicorn and configure nginx to pass web requests to Gunicorn
 which then sends requests to Flask. As well, the celery module requires some configuration, and you will need to have redis configured.
 
-Flask-Gunicorn-Nginx stack config: `fgnlink'_
+Flask-Gunicorn-Nginx stack config: `fgnlink`_
 
 .. _fgnlink: https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-14-04
 
