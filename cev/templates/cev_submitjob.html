@@ -1,0 +1,25 @@
+{% extends "basetemplate.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="container">
+            <h1 class="page-header">Self-Service Job Submission Page</h1>
+            <p>
+                Thank you for submitting a self-service job. From here you can check on the status of your job
+                by clicking on the below link.
+                When your job has fully completed with no errors, from the status page, you will be redirected
+                to a page where you can download the result file, and get the local filename for further processing.
+            </p>
+            <p>
+            Job ID is: {% autoescape false %}{{whatid}}{% endautoescape %}
+            <br>
+            Requested Job Type: {% autoescape false %}{{jobtype}}{% endautoescape %}
+            <br>
+            Click on this link to get the status of your job: <a href="http://104.236.27.243/status/{% autoescape false %}{{whatid}}{% endautoescape %}/{% autoescape false %}{{jobtype}}{% endautoescape %}">Status Link</a>
+            </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

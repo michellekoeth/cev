@@ -1,0 +1,21 @@
+{% extends "basetemplate.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="container">
+            <h1 class="page-header">Basic Claim Difference Visualizer</h1>
+            <p><b>Results for Patent No.:
+            <a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PALL&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.htm&r=1&f=G&l=50&s1={{patentno}}.PN.&OS=PN/{{patentno}}&RS=PN/{{patentno}}">{{patentno}}</a>
+            </b> and <b>PgPub No. (Pre-Grant Patent Application Publication):
+            <a href="http://appft.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PG01&p=1&u=%2Fnetahtml%2FPTO%2Fsrchnum.html&r=1&f=G&l=50&s1=%22{{appno}}%22.PGNR.&OS=DN/{{appno}}&RS=DN/{{appno}}">{{appno}}</a></b><br></p>
+            <p>New text added into issued Patent No. {{patentno}} shown in <font color=red>RED text.</font><br>
+            Text deleted from PgPub No. {{appno}} claims and not present in the issued PatentNo. {{patentno}} claims shown in <font color=blue>Blue text.</font><br>
+            Replacement text from PgPub No. {{appno}} claims with text in Patent No. {{patentno}} claims shown in <font color=green>Green text.</font></p>
+            <hr>
+            {% autoescape false %}{{claimviz}}{% endautoescape %}
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

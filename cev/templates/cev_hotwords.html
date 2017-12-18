@@ -1,0 +1,26 @@
+{% extends "basetemplate.html" %}
+{% block content %}
+<div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="container">
+            <h1 class="page-header">Hot Parts-of-Speech Visualizer</h1>
+            <p>
+                <form method="POST" action="/getHotPOSViz" id="hotposinput">
+                    <div class="form-group">
+                    Select a hot parts-of-speech visualization to create based on the list of available analysis files:
+                    <label for="exampleSelect1">Select an input POS Analysis file:</label>
+                        <select class="form-control" name="posinputfile" id="posinputfile">
+                            {% for x in server_list %}
+                            <option value="{{ x }}"{% if loop.first %} SELECTED{% endif %}>{{ x }}</option>
+                            {% endfor %}
+                        </select>
+                    <input class="btn btn-primary" type="submit" value="Get Hot Part of Speech Viz">
+                    </div>
+                </form>
+            </p>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

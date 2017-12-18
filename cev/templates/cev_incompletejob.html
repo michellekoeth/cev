@@ -1,0 +1,18 @@
+{% extends "basetemplate.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="container">
+            <h1 class="page-header">Self-Service Job Submission Status: Incomplete</h1>
+            <p>
+            Your self-service job with id: {% autoescape false %}{{whatid}}{% endautoescape %}, of type: {% autoescape false %}{{jobtype}}{% endautoescape %}
+            has a current status of: {% autoescape false %}{{currstatus}}{% endautoescape %}
+            <br>
+            Click <a href="http://104.236.27.243/status/{% autoescape false %}{{whatid}}{% endautoescape %}/{% autoescape false %}{{jobtype}}{% endautoescape %}">here to get latest status</a>
+            </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

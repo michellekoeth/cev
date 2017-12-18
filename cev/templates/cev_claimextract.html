@@ -1,0 +1,36 @@
+{% extends "basetemplate.html" %}
+{% block content %}
+<div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="container">
+            <h1 class="page-header">Patent Number Extractor</h1>
+            <p>
+                <form method="POST" action="/getPatents" id="patentquery">
+                    <div class="form-group">
+                    Enter a PatFT advanced query (click on <a href="http://patft.uspto.gov/nethtml/PTO/help/helpflds.htm">PatFT Field Search Help</a> for assistance)
+                    v 0.1 has no syntax error handling, so make sure your query is correct!
+                    <input name="patftquery"></li>
+                    <input class="btn btn-primary" type="submit" value="Get Patent List">
+                    </div>
+                </form>
+            </p>
+            <hr>
+            <h1 class="page-header">Claim Extraction</h1>
+            <p>
+                <form method="POST" action="/getClaims" id="claimquery">
+                    <div class="form-group">
+                    Enter a previously generated patent list filename (include .csv), and
+                    click the button below to generate a full claim set from all
+                    patents and any corresponding PgPub in the list. If there is no corresponding
+                    PgPub, that patent number will be omitted from the generated file of claim sets.
+                    <input name="patentlistfile"></li>
+                    <input class="btn btn-primary" type="submit" value="Get Claim Sets">
+                    </div>
+                </form>
+            </p>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

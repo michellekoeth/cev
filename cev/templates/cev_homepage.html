@@ -1,0 +1,28 @@
+{% extends "basetemplate.html" %}
+  {% block content %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="container">
+            <h1 class="page-header">Claim Evolution Visualizer 0.1</h1>
+            <p>
+              <form method="POST" action="/">
+                <div class="form-group">
+                  Enter a patent number only (future versions will allow for entry of app nums too)
+                  Do not enter commas, other punctuation marks or letters.<br>
+                  Please use the sample format as follows: Patent sample format: 8718190
+                  <P><label>Please enter patent number:</label>&nbsp;<input name="docid"/></p>
+                  <input class="btn btn-primary" type="submit" role="button" value="Visualize Patent vs. PgPub Method Claim Difference"/>
+                </div>
+              </form>
+            </p>
+          </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+
+
+
+
+
