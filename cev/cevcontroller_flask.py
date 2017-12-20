@@ -226,7 +226,9 @@ def get_matched_and_differences_for_a_patno(patno):
 			html = html + "<br><br>" + show_diff(matchedpair[1],matchedpair[0])
 	else:
 		html = "No corresponding PgPub was found for Patent No. " + str(patno) + ". Accordingly, no claim comparison can be made at this time."
-	return {"html":html,"appno":"No corresponding PgPub found"}
+		appno = "No corresponding PgPub found"
+
+	return {"html":html,"appno":appno}
 
 def show_diff(text, n_text):
     """
@@ -364,7 +366,7 @@ def getHotPOSViz():
 def hotwords():
 	# Get list of files in csv directory with _hotpos suffix. This will build the list of options
 	file_list = []
-	for file in os.listdir("/home/cev/projects/csv"):
+	for file in os.listdir("/var/www/html/cev/cev/csv"):
 		if file.endswith("_hotpos.csv"):
 			file_list.append(file)
 	return template('cev_hotwords.html',server_list=file_list)
